@@ -205,8 +205,6 @@ namespace sha512 {
     // Executes the sha512 algorithm over the all block messages 
     __device__ void Sha512_algorithm( Sha512_Context* __sha512_context ) {
 
-        printf("Block algorithm:\n");
-
         // Loop through all message blocks
         for ( uint64_t _ = 0; _ < __sha512_context->blocks_count; _++ ) 
         
@@ -229,8 +227,6 @@ namespace sha512 {
 
     // Executes the sha512 algorithm over a block message
     __device__ void Sha512_algorithm_single_block( Sha512_Context* __sha512_context, void* __block_message ) {
-
-        printf("Single block algorithm:\n");
 
         // Chunks creation
         uint64_t __block_chunks[ SHA512_CHUNKS_COUNT ] = { 0 };
@@ -312,15 +308,6 @@ namespace sha512 {
             __sha512_context->working_Variables,
             sizeof( __sha512_context->working_Variables )
         );
-
-        // printf("%lu\n", __sha512_context->working_Variables[ SHA512_WORKING_VARIABLE_A ]);
-        // printf("%lu\n", __sha512_context->working_Variables[ SHA512_WORKING_VARIABLE_B ]);
-        // printf("%lu\n", __sha512_context->working_Variables[ SHA512_WORKING_VARIABLE_C ]);
-        // printf("%lu\n", __sha512_context->working_Variables[ SHA512_WORKING_VARIABLE_D ]);
-        // printf("%lu\n", __sha512_context->working_Variables[ SHA512_WORKING_VARIABLE_E ]);
-        // printf("%lu\n", __sha512_context->working_Variables[ SHA512_WORKING_VARIABLE_F ]);
-        // printf("%lu\n", __sha512_context->working_Variables[ SHA512_WORKING_VARIABLE_G ]);
-        // printf("%lu\n", __sha512_context->working_Variables[ SHA512_WORKING_VARIABLE_H ]);
 
     }
 
