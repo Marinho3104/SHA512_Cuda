@@ -13,6 +13,9 @@ disable_warning_about_void_operations := -diag-suppress 1143
 
 all:
 
+	# Creates output directory if it does not exists
+	mkdir output
+
 	# Copies the main file into output path
 	cp $(src_path)*.cuh $(src_path)*.cu $(output_path) 
 
